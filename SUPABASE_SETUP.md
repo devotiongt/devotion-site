@@ -176,4 +176,4 @@ base: '/devotion-site/', // Cambia por el nombre de tu repo
 - [ ] No hay SELECT/UPDATE/DELETE para usuarios anónimos
 - [ ] Variables de entorno configuradas en GitHub Secrets
 - [ ] CORS configurado en Supabase para tu dominio
-- [ ] Rate limiting habilitado (automático en Supabase)
+- [ ] Rate limiting habilitado (automático en Supabase).
