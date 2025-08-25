@@ -1,0 +1,202 @@
+.services {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--terminal-bg) 0%, #001a00 50%, var(--terminal-bg) 100%);
+}
+
+.section-subtitle {
+  text-align: center;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.service-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--terminal-green);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
+}
+
+.service-header {
+  background: rgba(0, 255, 65, 0.05);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.service-command {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.command-name {
+  color: var(--terminal-text);
+  font-weight: 500;
+}
+
+.service-content {
+  padding: 2rem 1.5rem;
+}
+
+.service-content h3 {
+  color: var(--terminal-green);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.service-content p {
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  margin-bottom: 1.5rem;
+}
+
+.features-header {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.service-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-features li {
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.service-footer {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.terminal-button.small {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.cta-section {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-section .terminal-window {
+  width: 100%;
+  max-width: 700px;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h3 {
+  color: var(--terminal-green);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+.window-header {
+  background: var(--terminal-border);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--terminal-text);
+  opacity: 0.6;
+}
+
+.control.close {
+  background: #ff5f57;
+}
+
+.control.minimize {
+  background: #ffbd2e;
+}
+
+.control.maximize {
+  background: var(--terminal-green);
+}
+
+.window-title {
+  color: var(--terminal-text);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.window-content {
+  padding: 2.5rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    margin: 0 1rem;
+  }
+  
+  .service-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .window-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.3rem;
+  }
+}

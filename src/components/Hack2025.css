@@ -1,0 +1,365 @@
+.hack2025 {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--terminal-bg) 0%, #001100 30%, var(--terminal-bg) 70%, #001100 100%);
+  position: relative;
+}
+
+.hack2025::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(39, 168, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(39, 168, 0, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hack-header {
+  margin-bottom: 4rem;
+}
+
+.terminal-line {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--terminal-text);
+  margin-bottom: 1rem;
+}
+
+.prompt {
+  color: var(--terminal-green);
+}
+
+.terminal-output {
+  margin-top: 1.5rem;
+  padding: 2rem 0;
+}
+
+.hack-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px var(--terminal-shadow);
+}
+
+.hash {
+  color: var(--terminal-green);
+  text-shadow: 0 0 15px var(--terminal-shadow);
+}
+
+.year {
+  color: var(--terminal-green);
+  text-shadow: 0 0 15px var(--terminal-shadow);
+}
+
+.location {
+  color: var(--terminal-text);
+  opacity: 0.9;
+}
+
+.hack-subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--terminal-text);
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.hack-date {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--terminal-green);
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0.8;
+}
+
+.hack-tagline {
+  font-size: 1.1rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--terminal-text);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.hack-content {
+  margin-top: 4rem;
+}
+
+.hack-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.hack-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.info-section h3 {
+  font-size: 1.5rem;
+  color: var(--terminal-green);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.info-section p {
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(39, 168, 0, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--terminal-green);
+  transition: all 0.3s ease;
+}
+
+.goal-item:hover {
+  background: rgba(39, 168, 0, 0.1);
+  transform: translateX(5px);
+}
+
+.goal-icon {
+  font-size: 1.5rem;
+  min-width: 30px;
+}
+
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.participant-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid var(--terminal-border);
+  transition: all 0.3s ease;
+}
+
+.participant-type:hover {
+  background: rgba(39, 168, 0, 0.05);
+  border-color: var(--terminal-green);
+  transform: scale(1.02);
+}
+
+.participant-icon {
+  font-size: 1.5rem;
+  min-width: 30px;
+}
+
+.hack-guatemala .terminal-window.small {
+  margin: 0;
+}
+
+.guatemala-info h3 {
+  font-size: 1.3rem;
+  color: var(--terminal-green);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.guatemala-details {
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--terminal-border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  opacity: 0.8;
+}
+
+.detail-value {
+  color: var(--terminal-green);
+  font-weight: 600;
+}
+
+.guatemala-info p {
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.updates-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(39, 168, 0, 0.1);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.updates-icon {
+  font-size: 1.2rem;
+}
+
+.hack-cta {
+  margin-top: 4rem;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.terminal-window.cta .window-content {
+  text-align: center;
+}
+
+.terminal-window.cta h4 {
+  font-size: 1.3rem;
+  color: var(--terminal-green);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.terminal-window.cta p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hack-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  border: 2px solid var(--terminal-green);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--terminal-green);
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.hack-btn.primary {
+  background: var(--terminal-green);
+  color: var(--terminal-bg);
+}
+
+.hack-btn.primary:hover {
+  background: #33cc33;
+  border-color: #33cc33;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39, 168, 0, 0.3);
+}
+
+.hack-btn.secondary:hover {
+  background: var(--terminal-green);
+  color: var(--terminal-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39, 168, 0, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .hack-title {
+    font-size: 2.8rem;
+  }
+  
+  .hack-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .participants-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hack-title {
+    font-size: 2.2rem;
+  }
+  
+  .hack-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cta-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .participants-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .goals-list {
+    gap: 1rem;
+  }
+  
+  .goal-item {
+    padding: 0.8rem;
+  }
+  
+  .participant-type {
+    padding: 0.8rem;
+  }
+  
+  .hack-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .info-section h3 {
+    font-size: 1.3rem;
+  }
+}

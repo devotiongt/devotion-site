@@ -1,0 +1,154 @@
+/* Terminal-inspired CSS with black, white, green palette */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --terminal-bg: #000000;
+  --terminal-text: #ffffff;
+  --terminal-green: #27a800;
+  --terminal-green-dim: #1f8400;
+  --terminal-border: #333333;
+  --terminal-shadow: rgba(39, 168, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  line-height: 1.6;
+  color: var(--terminal-text);
+  background-color: var(--terminal-bg);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* Header height */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Terminal effects */
+.terminal-text {
+  color: var(--terminal-green);
+  text-shadow: 0 0 5px var(--terminal-shadow);
+}
+
+.terminal-border {
+  border: 2px solid var(--terminal-green);
+  box-shadow: 0 0 10px var(--terminal-shadow);
+}
+
+.terminal-button {
+  background: transparent;
+  color: var(--terminal-green);
+  border: 2px solid var(--terminal-green);
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.terminal-button:hover {
+  background: var(--terminal-green);
+  color: var(--terminal-bg);
+  box-shadow: 0 0 20px var(--terminal-shadow);
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--terminal-shadow);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--terminal-green);
+  text-shadow: 0 0 5px var(--terminal-shadow);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--terminal-green);
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blinking-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: var(--terminal-green);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
