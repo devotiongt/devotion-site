@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-section">
               <div className="footer-logo">
-                <img src="/logo.png" alt="Devotion" className="footer-logo-image" />
+                <img src="./logo.png" alt="Devotion" className="footer-logo-image" />
                 <span className="footer-logo-text">
                   <span className="dev-green">dev</span><span className="otion-white">otion</span>
                 </span>

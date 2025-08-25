@@ -226,13 +226,13 @@ const Hack2025Page = () => {
               <h2>Con el apoyo de</h2>
               <div className="sponsors-grid">
                 <a href="https://indigitous.org" target="_blank" rel="noopener noreferrer" className="sponsor-item">
-                  <img src="/sponsors/indigitous.webp" alt="Indigitous" />
+                  <img src="./sponsors/indigitous.webp" alt="Indigitous" />
                 </a>
                 <div className="sponsor-item">
-                  <img src="/sponsors/Atemporal-02.png" alt="Atemporal" />
+                  <img src="./sponsors/Atemporal-02.png" alt="Atemporal" />
                 </div>
                 <div className="sponsor-item">
-                  <img src="/sponsors/LOGO IBA.png" alt="IBA" />
+                  <img src="./sponsors/LOGO IBA.png" alt="IBA" />
                 </div>
               </div>
             </div>

@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
             
             <div className="hero-title">
-              <img src="/logo.png" alt="Devotion" className="hero-logo" />
+              <img src="./logo.png" alt="Devotion" className="hero-logo" />
               <h1 className="hero-title-text">
                 <span className="dev-green">dev</span><span className="otion-white">otion</span>
               </h1>

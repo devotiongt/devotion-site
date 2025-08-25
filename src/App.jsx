@@ -32,7 +32,7 @@ function HomePage() {
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/devotion-site">
         <div className="App">
           <Header />
           <main className="main-content">

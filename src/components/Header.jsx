@@ -12,7 +12,7 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
       // If not on home page, navigate to home first, then scroll
-      window.location.href = `/#${sectionId}`;
+      window.location.href = `/devotion-site/#${sectionId}`;
     } else {
       // If on home page, scroll to section
       const element = document.getElementById(sectionId);
@@ -28,7 +28,7 @@ const Header = () => {
       <div className="container">
         <div className="nav-content">
           <Link to="/" className="logo">
-            <img src="/logo.png" alt="Devotion" className="logo-image" />
+            <img src="./logo.png" alt="Devotion" className="logo-image" />
             <span className="logo-text">
               <span className="dev-green">dev</span><span className="otion-white">otion</span>
               <span className="blinking-cursor"></span>
