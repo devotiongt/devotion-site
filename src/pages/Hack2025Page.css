@@ -764,6 +764,67 @@ a
   .sidebar-content {
     order: -1;
   }
+  
+  /* Mejoras para botones en tablet */
+  .hero-actions {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 500px;
+    margin: 2rem auto 0;
+  }
+  
+  .reg-btn {
+    width: 100%;
+    padding: 1.5rem;
+    min-height: 85px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(39, 168, 0, 0.12);
+  }
+  
+  .reg-content h4 {
+    font-size: 1.3rem;
+  }
+  
+  .reg-content p {
+    font-size: 1rem;
+  }
+  
+  /* Mejoras para sección de evento global en tablet */
+  .global-event-info {
+    padding: 1.75rem;
+    border-radius: 12px;
+  }
+  
+  .global-event-info h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .global-event-info p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  /* Mejoras para objetivos numerados en tablet */
+  .goal-modern {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .goal-number {
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+  
+  .goal-modern h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .goal-modern p {
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -817,6 +878,129 @@ a
   
   .subscribe-btn {
     padding: 1rem;
+  }
+
+  /* Mejoras para botones de registro en móvil */
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    max-width: 400px;
+    margin: 2rem auto 0;
+  }
+  
+  .reg-btn {
+    width: 100%;
+    padding: 1.25rem;
+    min-height: 80px;
+    justify-content: flex-start;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(39, 168, 0, 0.15);
+  }
+  
+  .reg-btn:hover {
+    transform: scale(1.02) translateY(-2px);
+  }
+  
+  .reg-icon {
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .reg-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .reg-content {
+    flex: 1;
+  }
+  
+  .reg-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+  }
+  
+  .reg-content p {
+    font-size: 1rem;
+    opacity: 0.85;
+  }
+  
+  .hero-modern {
+    padding: 2rem 1rem;
+  }
+  
+  /* Mejoras para sección de evento global en móvil */
+  .global-event-info {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--terminal-green);
+  }
+  
+  .global-event-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+  
+  .global-event-info p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+  
+  .global-event-info a {
+    word-break: break-word;
+  }
+  
+  /* Mejoras para objetivos numerados en móvil */
+  .goal-modern {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  
+  .goal-number {
+    font-size: 2.5rem;
+    min-width: auto;
+    align-self: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .goal-modern h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+  
+  .goal-modern p {
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  /* Mejoras para section info en móvil */
+  .info-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-section h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 }
 

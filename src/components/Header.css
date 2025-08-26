@@ -154,6 +154,7 @@
     transition: all 0.3s ease;
     flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;
   }
 
   .nav-container.nav-open {
@@ -166,6 +167,7 @@
     flex-direction: column;
     width: 100%;
     gap: 0;
+    align-items: flex-start;
   }
 
   .menu-toggle {
@@ -173,9 +175,12 @@
   }
 
   .nav-link {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid var(--terminal-border);
     width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
   }
 
   .nav-link:last-child {
