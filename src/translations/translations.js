@@ -296,8 +296,8 @@ export const translations = {
       },
       guatemala: {
         title: 'Guatemala 2025',
-        location: 'Lugar por confirmar',
-        date: 'Octubre 2025 (fecha exacta pendiente)',
+        location: 'Ciudad San Cristóbal, Guatemala',
+        date: '24, 25 y 26 de Octubre',
         description: 'Únete al primer #HACK en Guatemala. Estamos organizando este evento histórico para conectar a la comunidad cristiana tecnológica del país.',
         updates: 'Mantente informado sobre actualizaciones de fecha y ubicación'
       },
@@ -689,8 +689,8 @@ export const translations = {
       },
       guatemala: {
         title: 'Guatemala 2025',
-        location: 'Venue to be confirmed',
-        date: 'October 2025 (exact date pending)',
+        location: 'Ciudad San Cristóbal, Guatemala',
+        date: 'October 24, 25 and 26',
         description: 'Join the first #HACK in Guatemala. We\'re organizing this historic event to connect the country\'s Christian tech community.',
         updates: 'Stay informed about date and location updates'
       },
