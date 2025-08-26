@@ -3,11 +3,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { submitHack2025PreRegistration, submitHack2025VolunteerApplication } from '../lib/supabase';
 import './Hack2025Forms.css';
 
-const Hack2025Forms = () => {
+const Hack2025Forms = ({ formType = 'preregister', onBack }) => {
   const { t } = useLanguage();
-  const [activeForm, setActiveForm] = useState('preregister');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: null, message: '' });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   
   const [preRegisterData, setPreRegisterData] = useState({
     name: '',
@@ -57,6 +57,7 @@ const Hack2025Forms = () => {
         type: 'success',
         message: '¡Pre-registro enviado exitosamente! Pronto recibirás actualizaciones sobre el evento.'
       });
+      setIsFormSubmitted(true);
       
       setPreRegisterData({
         name: '',
@@ -89,6 +90,7 @@ const Hack2025Forms = () => {
         type: 'success',
         message: '¡Aplicación de voluntario enviada exitosamente! Te contactaremos pronto con más información.'
       });
+      setIsFormSubmitted(true);
       
       setVolunteerData({
         name: '',
@@ -109,52 +111,61 @@ const Hack2025Forms = () => {
     setIsSubmitting(false);
   };
 
-  return (
-    <div className="hack2025-forms">
-      <div className="container">
-        <div className="forms-header">
-          <div className="terminal-window">
-            <div className="window-header">
-              <div className="window-controls">
-                <span className="control close"></span>
-                <span className="control minimize"></span>
-                <span className="control maximize"></span>
-              </div>
-              <span className="window-title">hack2025_registration.exe</span>
-            </div>
-            <div className="window-content">
-              <div className="form-selector">
-                <button 
-                  className={`selector-btn ${activeForm === 'preregister' ? 'active' : ''}`}
-                  onClick={() => setActiveForm('preregister')}
-                >
-                  <span className="selector-icon">📝</span>
-                  <span>{t('hack2025.cta.preregister.title')}</span>
-                </button>
-                <button 
-                  className={`selector-btn ${activeForm === 'volunteer' ? 'active' : ''}`}
-                  onClick={() => setActiveForm('volunteer')}
-                >
-                  <span className="selector-icon">🙋‍♂️</span>
-                  <span>{t('hack2025.cta.volunteer.title')}</span>
-                </button>
-              </div>
-              
-              {/* Status Message */}
-              {submitStatus.message && (
-                <div className={`status-message ${submitStatus.type}`}>
-                  <span className="status-icon">
-                    {submitStatus.type === 'success' ? '✅' : '❌'}
-                  </span>
-                  <span>{submitStatus.message}</span>
+  const handleSendAnother = () => {
+    setIsFormSubmitted(false);
+    setSubmitStatus({ type: null, message: '' });
+  };
+
+  const handleGoBack = () => {
+    if (onBack) {
+      onBack();
+    }
+  };
+
+  // Si el formulario fue enviado exitosamente, mostrar solo la confirmación
+  if (isFormSubmitted) {
+    return (
+      <div className="hack2025-forms">
+        <div className="container">
+          <div className="success-confirmation">
+            <div className="terminal-window">
+              <div className="window-header">
+                <div className="window-controls">
+                  <span className="control close"></span>
+                  <span className="control minimize"></span>
+                  <span className="control maximize"></span>
                 </div>
-              )}
+                <span className="window-title">submission_confirmed.success</span>
+              </div>
+              <div className="window-content">
+                <div className="success-content">
+                  <div className="success-icon">✅</div>
+                  <h2>¡Enviado exitosamente!</h2>
+                  <div className="success-message">
+                    {submitStatus.message}
+                  </div>
+                  <div className="success-actions">
+                    <button className="terminal-button primary" onClick={handleSendAnother}>
+                      📝 Enviar otra solicitud
+                    </button>
+                    <button className="terminal-button secondary" onClick={handleGoBack}>
+                      ← Volver
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    );
+  }
 
+  return (
+    <div className="hack2025-forms">
+      <div className="container">
         <div className="forms-content">
-          {activeForm === 'preregister' && (
+          {formType === 'preregister' && (
             <div className="form-section">
               <div className="terminal-window">
                 <div className="window-header">
@@ -167,8 +178,28 @@ const Hack2025Forms = () => {
                 </div>
                 <div className="window-content">
                   <div className="form-header">
-                    <h2>{t('hack2025.form.preregister.title')}</h2>
-                    <p>Completa este formulario para recibir actualizaciones sobre el evento</p>
+                    <div className="form-title-row">
+                      <div className="form-title-content">
+                        <div className="form-icon">📝</div>
+                        <div>
+                          <h2>{t('hack2025.form.preregister.title')}</h2>
+                          <p>Completa este formulario para recibir actualizaciones sobre el evento</p>
+                        </div>
+                      </div>
+                      {onBack && (
+                        <button className="back-button" onClick={handleGoBack}>
+                          ← Volver
+                        </button>
+                      )}
+                    </div>
+                    
+                    {/* Status Message */}
+                    {submitStatus.message && submitStatus.type === 'error' && (
+                      <div className={`status-message ${submitStatus.type}`}>
+                        <span className="status-icon">❌</span>
+                        <span>{submitStatus.message}</span>
+                      </div>
+                    )}
                   </div>
 
                   <form onSubmit={handlePreRegisterSubmit} className="hack-form">
@@ -289,7 +320,7 @@ const Hack2025Forms = () => {
             </div>
           )}
 
-          {activeForm === 'volunteer' && (
+          {formType === 'volunteer' && (
             <div className="form-section">
               <div className="terminal-window">
                 <div className="window-header">
@@ -302,8 +333,28 @@ const Hack2025Forms = () => {
                 </div>
                 <div className="window-content">
                   <div className="form-header">
-                    <h2>{t('hack2025.form.volunteer.title')}</h2>
-                    <p>Únete al equipo organizador de #HACK2025 Guatemala</p>
+                    <div className="form-title-row">
+                      <div className="form-title-content">
+                        <div className="form-icon">🙋‍♂️</div>
+                        <div>
+                          <h2>{t('hack2025.form.volunteer.title')}</h2>
+                          <p>Únete al equipo organizador de #HACK2025 Guatemala</p>
+                        </div>
+                      </div>
+                      {onBack && (
+                        <button className="back-button" onClick={handleGoBack}>
+                          ← Volver
+                        </button>
+                      )}
+                    </div>
+                    
+                    {/* Status Message */}
+                    {submitStatus.message && submitStatus.type === 'error' && (
+                      <div className={`status-message ${submitStatus.type}`}>
+                        <span className="status-icon">❌</span>
+                        <span>{submitStatus.message}</span>
+                      </div>
+                    )}
                   </div>
 
                   <form onSubmit={handleVolunteerSubmit} className="hack-form">

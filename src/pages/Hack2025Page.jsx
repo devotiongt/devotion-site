@@ -8,6 +8,7 @@ import './Hack2025Page.css';
 const Hack2025Page = () => {
   const { t } = useLanguage();
   const [showForms, setShowForms] = useState(false);
+  const [activeFormType, setActiveFormType] = useState(null);
   const [email, setEmail] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState({ type: null, message: '' });
 
@@ -32,8 +33,23 @@ const Hack2025Page = () => {
     }
   };
 
-  if (showForms) {
-    return <Hack2025Forms />;
+  const handleShowPreRegister = () => {
+    setActiveFormType('preregister');
+    setShowForms(true);
+  };
+
+  const handleShowVolunteer = () => {
+    setActiveFormType('volunteer');
+    setShowForms(true);
+  };
+
+  const handleBackToMain = () => {
+    setShowForms(false);
+    setActiveFormType(null);
+  };
+
+  if (showForms && activeFormType) {
+    return <Hack2025Forms formType={activeFormType} onBack={handleBackToMain} />;
   }
 
   return (
@@ -49,7 +65,7 @@ const Hack2025Page = () => {
           <div className="hack-subtitle-large">{t('hack2025.subtitle')}</div>
           <div className="hack-tagline-large">{t('hack2025.tagline')}</div>
           <div className="hero-actions">
-            <button className="reg-btn participant" onClick={() => setShowForms(true)}>
+            <button className="reg-btn participant" onClick={handleShowPreRegister}>
               <span className="reg-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
@@ -59,6 +75,20 @@ const Hack2025Page = () => {
               <div className="reg-content">
                 <h4>Pre-regístrate</h4>
                 <p>¡Reserva tu lugar!</p>
+              </div>
+            </button>
+            
+            <button className="reg-btn volunteer" onClick={handleShowVolunteer}>
+              <span className="reg-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L13.09 6.26L18 7L13.09 7.74L12 12L10.91 7.74L6 7L10.91 6.26L12 2Z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <path d="M5 17L6.5 20.5L10 21L6.5 21.5L5 25L3.5 21.5L0 21L3.5 20.5L5 17Z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <path d="M19 17L20.5 20.5L24 21L20.5 21.5L19 25L17.5 21.5L14 21L17.5 20.5L19 17Z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                </svg>
+              </span>
+              <div className="reg-content">
+                <h4>Ser Voluntario</h4>
+                <p>¡Ayuda a organizar!</p>
               </div>
             </button>
           </div>

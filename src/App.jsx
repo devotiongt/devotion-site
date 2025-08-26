@@ -10,6 +10,7 @@ import Hack2025 from './components/Hack2025'
 // import Donate from './components/Donate'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import VolunteersPage from './pages/VolunteersPage'
 import OrganizationsPage from './pages/OrganizationsPage'
 import Hack2025Page from './pages/Hack2025Page'
@@ -33,6 +34,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router basename="/devotion-site">
+        <ScrollToTop />
         <div className="App">
           <Header />
           <main className="main-content">

@@ -9,6 +9,137 @@
   margin-bottom: 2rem;
 }
 
+/* Success Confirmation Styles */
+.success-confirmation {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.success-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.success-content h2 {
+  color: #00ff41;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Form Title Styles */
+.form-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.form-title-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.form-icon {
+  font-size: 2.5rem;
+  margin-top: 0.25rem;
+}
+
+.form-title-content h2 {
+  color: #00ff41;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.form-title-content p {
+  color: #cccccc;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.back-button {
+  background: transparent;
+  border: 1px solid #666;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  border-color: #00ff41;
+  color: #00ff41;
+  background: rgba(0, 255, 65, 0.1);
+  transform: translateY(-1px);
+}
+
+.terminal-button.secondary {
+  background: transparent;
+  border: 1px solid #666;
+  color: #ffffff;
+}
+
+.terminal-button.secondary:hover {
+  border-color: #00ff41;
+  color: #00ff41;
+  background: rgba(0, 255, 65, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .form-title-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .form-title-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .form-icon {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  
+  .back-button {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+}
+
 .form-selector {
   display: flex;
   gap: 2rem;

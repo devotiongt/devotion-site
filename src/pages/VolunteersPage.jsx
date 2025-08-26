@@ -1,8 +1,58 @@
+import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { submitVolunteerApplication } from '../lib/supabase';
 import './VolunteersPage.css';
 
 const VolunteersPage = () => {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: null, message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    skills: '',
+    experience: '',
+    availability: '',
+    motivation: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    const result = await submitVolunteerApplication(formData);
+    
+    if (result.success) {
+      setSubmitStatus({
+        type: 'success',
+        message: '¡Aplicación enviada exitosamente! Te contactaremos pronto para conocer más sobre tu interés en ser voluntario.'
+      });
+      setFormData({
+        name: '',
+        email: '',
+        skills: '',
+        experience: '',
+        availability: '',
+        motivation: ''
+      });
+    } else {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Hubo un error al enviar tu aplicación. Por favor, inténtalo de nuevo.'
+      });
+    }
+    
+    setIsSubmitting(false);
+  };
 
   return (
     <div className="volunteers-page">
@@ -137,25 +187,68 @@ const VolunteersPage = () => {
                 <h3 className="terminal-text">{t('contact.volunteer.title')}</h3>
                 <p className="form-subtitle">{t('contact.volunteer.subtitle')}</p>
                 
-                <form className="volunteer-form">
+                {submitStatus.message && (
+                  <div className={`status-message ${submitStatus.type}`} style={{
+                    padding: '10px',
+                    margin: '10px 0',
+                    border: `1px solid ${submitStatus.type === 'success' ? '#00ff41' : '#ff4444'}`,
+                    backgroundColor: submitStatus.type === 'success' ? 'rgba(0, 255, 65, 0.1)' : 'rgba(255, 68, 68, 0.1)',
+                    color: submitStatus.type === 'success' ? '#00ff41' : '#ff4444',
+                    fontSize: '14px',
+                    fontFamily: 'JetBrains Mono, monospace'
+                  }}>
+                    <span style={{ marginRight: '8px' }}>
+                      {submitStatus.type === 'success' ? '✅' : '❌'}
+                    </span>
+                    {submitStatus.message}
+                  </div>
+                )}
+                
+                <form className="volunteer-form" onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label>{t('contact.volunteer.form.name')}</label>
-                    <input type="text" placeholder={t('contact.volunteer.form.name')} />
+                    <input 
+                      type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder={t('contact.volunteer.form.name')}
+                      required
+                    />
                   </div>
                   
                   <div className="form-group">
                     <label>{t('contact.volunteer.form.email')}</label>
-                    <input type="email" placeholder={t('contact.volunteer.form.email')} />
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder={t('contact.volunteer.form.email')}
+                      required
+                    />
                   </div>
                   
                   <div className="form-group">
                     <label>{t('contact.volunteer.form.skills')}</label>
-                    <input type="text" placeholder={t('contact.volunteer.form.skills')} />
+                    <input 
+                      type="text" 
+                      name="skills"
+                      value={formData.skills}
+                      onChange={handleChange}
+                      placeholder={t('contact.volunteer.form.skills')}
+                      required
+                    />
                   </div>
                   
                   <div className="form-group">
                     <label>{t('contact.volunteer.form.experience')}</label>
-                    <select>
+                    <select 
+                      name="experience"
+                      value={formData.experience}
+                      onChange={handleChange}
+                      required
+                    >
                       <option value="">Selecciona tu nivel</option>
                       <option value="beginner">Principiante (0-2 años)</option>
                       <option value="intermediate">Intermedio (2-5 años)</option>
@@ -166,7 +259,12 @@ const VolunteersPage = () => {
                   
                   <div className="form-group">
                     <label>{t('contact.volunteer.form.availability')}</label>
-                    <select>
+                    <select 
+                      name="availability"
+                      value={formData.availability}
+                      onChange={handleChange}
+                      required
+                    >
                       <option value="">Horas por semana</option>
                       <option value="1-5">1-5 horas</option>
                       <option value="5-10">5-10 horas</option>
@@ -178,9 +276,13 @@ const VolunteersPage = () => {
                   <div className="form-group">
                     <label>{t('contact.volunteer.form.motivation')}</label>
                     <textarea 
+                      name="motivation"
+                      value={formData.motivation}
+                      onChange={handleChange}
                       rows="5" 
                       placeholder={t('contact.volunteer.form.motivation')}
-                    ></textarea>
+                      required
+                    />
                   </div>
                   
                   <div className="terminal-output">
@@ -190,8 +292,12 @@ const VolunteersPage = () => {
                     </div>
                   </div>
                   
-                  <button type="submit" className="terminal-button primary">
-                    {t('contact.volunteer.form.button')}
+                  <button type="submit" className="terminal-button primary" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>⏳ Enviando...</>
+                    ) : (
+                      t('contact.volunteer.form.button')
+                    )}
                   </button>
                 </form>
               </div>

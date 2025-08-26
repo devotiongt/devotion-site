@@ -1,8 +1,62 @@
+import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { submitOrganizationRequest } from '../lib/supabase';
 import './OrganizationsPage.css';
 
 const OrganizationsPage = () => {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: null, message: '' });
+  const [formData, setFormData] = useState({
+    organizationName: '',
+    contactName: '',
+    email: '',
+    organizationType: '',
+    website: '',
+    needs: '',
+    timeline: '',
+    budget: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    const result = await submitOrganizationRequest(formData);
+    
+    if (result.success) {
+      setSubmitStatus({
+        type: 'success',
+        message: '¡Solicitud de partnership enviada exitosamente! Te contactaremos pronto para discutir cómo podemos ayudar a tu organización.'
+      });
+      setFormData({
+        organizationName: '',
+        contactName: '',
+        email: '',
+        organizationType: '',
+        website: '',
+        needs: '',
+        timeline: '',
+        budget: ''
+      });
+    } else {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo.'
+      });
+    }
+    
+    setIsSubmitting(false);
+  };
 
   return (
     <div className="organizations-page">
@@ -187,26 +241,69 @@ const OrganizationsPage = () => {
                 <h3 className="terminal-text">{t('contact.organization.title')}</h3>
                 <p className="form-subtitle">{t('contact.organization.subtitle')}</p>
                 
-                <form className="organization-form">
+                {submitStatus.message && (
+                  <div className={`status-message ${submitStatus.type}`} style={{
+                    padding: '10px',
+                    margin: '10px 0',
+                    border: `1px solid ${submitStatus.type === 'success' ? '#00ff41' : '#ff4444'}`,
+                    backgroundColor: submitStatus.type === 'success' ? 'rgba(0, 255, 65, 0.1)' : 'rgba(255, 68, 68, 0.1)',
+                    color: submitStatus.type === 'success' ? '#00ff41' : '#ff4444',
+                    fontSize: '14px',
+                    fontFamily: 'JetBrains Mono, monospace'
+                  }}>
+                    <span style={{ marginRight: '8px' }}>
+                      {submitStatus.type === 'success' ? '✅' : '❌'}
+                    </span>
+                    {submitStatus.message}
+                  </div>
+                )}
+                
+                <form className="organization-form" onSubmit={handleSubmit}>
                   <div className="form-row">
                     <div className="form-group">
                       <label>{t('contact.organization.form.organizationName')}</label>
-                      <input type="text" placeholder={t('contact.organization.form.organizationName')} />
+                      <input 
+                        type="text" 
+                        name="organizationName"
+                        value={formData.organizationName}
+                        onChange={handleChange}
+                        placeholder={t('contact.organization.form.organizationName')}
+                        required
+                      />
                     </div>
                     <div className="form-group">
                       <label>{t('contact.organization.form.contactName')}</label>
-                      <input type="text" placeholder={t('contact.organization.form.contactName')} />
+                      <input 
+                        type="text" 
+                        name="contactName"
+                        value={formData.contactName}
+                        onChange={handleChange}
+                        placeholder={t('contact.organization.form.contactName')}
+                        required
+                      />
                     </div>
                   </div>
                   
                   <div className="form-row">
                     <div className="form-group">
                       <label>{t('contact.organization.form.email')}</label>
-                      <input type="email" placeholder={t('contact.organization.form.email')} />
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder={t('contact.organization.form.email')}
+                        required
+                      />
                     </div>
                     <div className="form-group">
                       <label>{t('contact.organization.form.organizationType')}</label>
-                      <select>
+                      <select 
+                        name="organizationType"
+                        value={formData.organizationType}
+                        onChange={handleChange}
+                        required
+                      >
                         <option value="">Selecciona el tipo</option>
                         <option value="church">Iglesia</option>
                         <option value="ngo">ONG</option>
@@ -219,21 +316,36 @@ const OrganizationsPage = () => {
                   
                   <div className="form-group">
                     <label>{t('contact.organization.form.website')}</label>
-                    <input type="url" placeholder={t('contact.organization.form.website')} />
+                    <input 
+                      type="url" 
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      placeholder={t('contact.organization.form.website')}
+                    />
                   </div>
                   
                   <div className="form-group">
                     <label>{t('contact.organization.form.needs')}</label>
                     <textarea 
+                      name="needs"
+                      value={formData.needs}
+                      onChange={handleChange}
                       rows="5" 
                       placeholder={t('contact.organization.form.needs')}
-                    ></textarea>
+                      required
+                    />
                   </div>
                   
                   <div className="form-row">
                     <div className="form-group">
                       <label>{t('contact.organization.form.timeline')}</label>
-                      <select>
+                      <select 
+                        name="timeline"
+                        value={formData.timeline}
+                        onChange={handleChange}
+                        required
+                      >
                         <option value="">Tiempo estimado</option>
                         <option value="urgent">Urgente (1-3 meses)</option>
                         <option value="normal">Normal (3-6 meses)</option>
@@ -242,7 +354,11 @@ const OrganizationsPage = () => {
                     </div>
                     <div className="form-group">
                       <label>{t('contact.organization.form.budget')}</label>
-                      <select>
+                      <select 
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleChange}
+                      >
                         <option value="">Presupuesto (opcional)</option>
                         <option value="none">Sin presupuesto</option>
                         <option value="small">Pequeño (donación simbólica)</option>
@@ -259,8 +375,12 @@ const OrganizationsPage = () => {
                     </div>
                   </div>
                   
-                  <button type="submit" className="terminal-button primary">
-                    {t('contact.organization.form.button')}
+                  <button type="submit" className="terminal-button primary" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>⏳ Enviando...</>
+                    ) : (
+                      t('contact.organization.form.button')
+                    )}
                   </button>
                 </form>
               </div>
