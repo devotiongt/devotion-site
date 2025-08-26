@@ -12,7 +12,7 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
       // If not on home page, navigate to home first, then scroll
-      window.location.href = `/devotion-site/#${sectionId}`;
+      window.location.href = `/#${sectionId}`;
     } else {
       // If on home page, scroll to section
       const element = document.getElementById(sectionId);
