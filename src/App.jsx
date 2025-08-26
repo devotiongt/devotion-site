@@ -33,7 +33,7 @@ function HomePage() {
 function App() {
   return (
     <LanguageProvider>
-      <Router basename="/devotion-site">
+      <Router>
         <ScrollToTop />
         <div className="App">
           <Header />
