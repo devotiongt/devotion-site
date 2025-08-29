@@ -43,7 +43,9 @@ const About = () => {
             
             <div className="about-stats">
               <div className="stat-item terminal-border">
-                <div className="stat-number terminal-text">∞</div>
+                <div className="stat-number terminal-text material-icons" style={{ fontSize: '5rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  all_inclusive
+                </div>
                 <div className="stat-label">{t('about.stats.love')}</div>
               </div>
               <div className="stat-item terminal-border">

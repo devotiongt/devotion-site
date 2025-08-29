@@ -83,28 +83,51 @@ const VolunteersPage = () => {
                 <h3 className="terminal-text">{t('volunteers.benefits.title')}</h3>
                 <div className="benefits-grid">
                   <div className="benefit-item">
-                    <div className="benefit-icon">✨</div>
+                    <div className="benefit-icon">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                      </svg>
+                    </div>
                     <div className="benefit-content">
                       <h4>{t('volunteers.benefits.purpose')}</h4>
                       <p>Cada línea de código que escribes tiene propósito eterno y contribuye al Reino de Dios</p>
                     </div>
                   </div>
                   <div className="benefit-item">
-                    <div className="benefit-icon">👥</div>
+                    <div className="benefit-icon">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="m22 21-3-3 1.5-1.5a2.121 2.121 0 0 0 0-3L16.5 9.5"/>
+                      </svg>
+                    </div>
                     <div className="benefit-content">
                       <h4>{t('volunteers.benefits.community')}</h4>
                       <p>Únete a una comunidad de desarrolladores que comparten tu fe y valores</p>
                     </div>
                   </div>
                   <div className="benefit-item">
-                    <div className="benefit-icon">📈</div>
+                    <div className="benefit-icon">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="22,6 13.5,14.5 8.5,9.5 2,16"/>
+                        <polyline points="16,6 22,6 22,12"/>
+                      </svg>
+                    </div>
                     <div className="benefit-content">
                       <h4>{t('volunteers.benefits.growth')}</h4>
                       <p>Desarrolla tanto tus habilidades técnicas como tu crecimiento espiritual</p>
                     </div>
                   </div>
                   <div className="benefit-item">
-                    <div className="benefit-icon">🌍</div>
+                    <div className="benefit-icon">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="m4.93 4.93 4.24 4.24"/>
+                        <path d="m14.83 9.17 4.24-4.24"/>
+                        <path d="m14.83 14.83 4.24 4.24"/>
+                        <path d="m9.17 14.83-4.24 4.24"/>
+                      </svg>
+                    </div>
                     <div className="benefit-content">
                       <h4>{t('volunteers.benefits.impact')}</h4>
                       <p>Ve tu trabajo transformar organizaciones y amplificar el impacto del evangelio</p>
@@ -120,7 +143,12 @@ const VolunteersPage = () => {
             <div className="roles-grid">
               <div className="role-card">
                 <div className="role-header">
-                  <div className="role-icon">💻</div>
+                  <div className="role-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                      <path d="m15 14 5-5-5-5"/>
+                    </svg>
+                  </div>
                   <h4>{t('volunteers.roles.developer.title')}</h4>
                 </div>
                 <p>{t('volunteers.roles.developer.desc')}</p>
@@ -133,7 +161,11 @@ const VolunteersPage = () => {
               </div>
               <div className="role-card">
                 <div className="role-header">
-                  <div className="role-icon">🎨</div>
+                  <div className="role-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.64 16.2a2 2 0 0 1-2.83-2.83l8.49-8.49"/>
+                    </svg>
+                  </div>
                   <h4>{t('volunteers.roles.designer.title')}</h4>
                 </div>
                 <p>{t('volunteers.roles.designer.desc')}</p>
@@ -159,7 +191,12 @@ const VolunteersPage = () => {
               </div>
               <div className="role-card">
                 <div className="role-header">
-                  <div className="role-icon">✍️</div>
+                  <div className="role-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                      <path d="m15 5 4 4"/>
+                    </svg>
+                  </div>
                   <h4>{t('volunteers.roles.content.title')}</h4>
                 </div>
                 <p>{t('volunteers.roles.content.desc')}</p>

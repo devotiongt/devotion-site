@@ -143,8 +143,10 @@ a
   text-align: left;
 }
 .participant-icon-large {
-  font-size: 2rem;
+  font-size: 48px;
   margin-bottom: 0.5rem;
+  color: var(--terminal-green);
+  display: block;
 }
 .participant-modern h4 {
   color: var(--terminal-green);
@@ -189,8 +191,10 @@ a
   align-items: flex-start;
 }
 .info-icon {
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-bottom: 0.5rem;
+  color: var(--terminal-green);
+  display: block;
 }
 .guatemala-info-modern strong {
   color: var(--terminal-green);
@@ -285,7 +289,11 @@ a
   transform: scale(1.03);
 }
 .reg-icon {
-  font-size: 2rem;
+  font-size: 28px;
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .reg-content h4 {
   font-size: 1.1rem;

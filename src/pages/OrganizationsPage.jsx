@@ -86,57 +86,33 @@ const OrganizationsPage = () => {
               <div className="window-content">
                 <h3 className="terminal-text">{t('organizations.services.title')}</h3>
                 <div className="services-grid">
-                  <div className="service-card">
-                    <div className="service-header">
-                      <div className="service-icon">🌐</div>
-                      <h4>{t('organizations.services.web.title')}</h4>
+                  <div className="service-card compact">
+                    <div className="service-icon material-icons">
+                      language
                     </div>
+                    <h4>{t('organizations.services.web.title')}</h4>
                     <p>{t('organizations.services.web.desc')}</p>
-                    <ul>
-                      <li>Sitios web responsivos</li>
-                      <li>Sistemas de donaciones</li>
-                      <li>Plataformas de eventos</li>
-                      <li>Portales de miembros</li>
-                    </ul>
                   </div>
-                  <div className="service-card">
-                    <div className="service-header">
-                      <div className="service-icon">📱</div>
-                      <h4>{t('organizations.services.mobile.title')}</h4>
+                  <div className="service-card compact">
+                    <div className="service-icon material-icons">
+                      smartphone
                     </div>
+                    <h4>{t('organizations.services.mobile.title')}</h4>
                     <p>{t('organizations.services.mobile.desc')}</p>
-                    <ul>
-                      <li>Apps para congregaciones</li>
-                      <li>Notificaciones push</li>
-                      <li>Contenido offline</li>
-                      <li>Streaming integrado</li>
-                    </ul>
                   </div>
-                  <div className="service-card">
-                    <div className="service-header">
-                      <div className="service-icon">⚙️</div>
-                      <h4>{t('organizations.services.systems.title')}</h4>
+                  <div className="service-card compact">
+                    <div className="service-icon material-icons">
+                      hub
                     </div>
+                    <h4>{t('organizations.services.systems.title')}</h4>
                     <p>{t('organizations.services.systems.desc')}</p>
-                    <ul>
-                      <li>CRM ministerial</li>
-                      <li>Gestión de voluntarios</li>
-                      <li>Sistemas de seguimiento</li>
-                      <li>Reportes automáticos</li>
-                    </ul>
                   </div>
-                  <div className="service-card">
-                    <div className="service-header">
-                      <div className="service-icon">📊</div>
-                      <h4>{t('organizations.services.consulting.title')}</h4>
+                  <div className="service-card compact">
+                    <div className="service-icon material-icons">
+                      analytics
                     </div>
+                    <h4>{t('organizations.services.consulting.title')}</h4>
                     <p>{t('organizations.services.consulting.desc')}</p>
-                    <ul>
-                      <li>Arquitectura de sistemas</li>
-                      <li>Migración a la nube</li>
-                      <li>Seguridad y privacidad</li>
-                      <li>Optimización de procesos</li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -147,22 +123,30 @@ const OrganizationsPage = () => {
             <h3 className="terminal-text">{t('organizations.partnership.title')}</h3>
             <div className="partnership-grid">
               <div className="partnership-card">
-                <div className="partnership-icon">💝</div>
+                <div className="partnership-icon material-icons">
+                  card_giftcard
+                </div>
                 <h4>{t('organizations.partnership.free')}</h4>
                 <p>No cobramos por desarrollo. Creemos que la tecnología debe estar al alcance de todas las organizaciones que sirven al Reino de Dios.</p>
               </div>
               <div className="partnership-card">
-                <div className="partnership-icon">🤝</div>
+                <div className="partnership-icon material-icons">
+                  support_agent
+                </div>
                 <h4>{t('organizations.partnership.support')}</h4>
                 <p>Soporte técnico continuo, actualizaciones y mantenimiento incluido para que tu organización siempre esté funcionando óptimamente.</p>
               </div>
               <div className="partnership-card">
-                <div className="partnership-icon">🔧</div>
+                <div className="partnership-icon material-icons">
+                  build
+                </div>
                 <h4>{t('organizations.partnership.maintenance')}</h4>
                 <p>Mantenimiento preventivo, actualizaciones de seguridad y mejoras continuas sin costos adicionales.</p>
               </div>
               <div className="partnership-card">
-                <div className="partnership-icon">📚</div>
+                <div className="partnership-icon material-icons">
+                  school
+                </div>
                 <h4>{t('organizations.partnership.training')}</h4>
                 <p>Capacitación completa para tu equipo en el uso de las herramientas y sistemas que desarrollemos.</p>
               </div>
@@ -173,7 +157,9 @@ const OrganizationsPage = () => {
             <h3 className="terminal-text">{t('organizations.target.title')}</h3>
             <div className="target-grid">
               <div className="target-card">
-                <div className="target-icon">⛪</div>
+                <div className="target-icon material-icons">
+                  church
+                </div>
                 <h4>{t('organizations.target.churches.title')}</h4>
                 <p>{t('organizations.target.churches.desc')}</p>
                 <div className="examples">
@@ -186,7 +172,9 @@ const OrganizationsPage = () => {
                 </div>
               </div>
               <div className="target-card">
-                <div className="target-icon">🤝</div>
+                <div className="target-icon material-icons">
+                  handshake
+                </div>
                 <h4>{t('organizations.target.ngos.title')}</h4>
                 <p>{t('organizations.target.ngos.desc')}</p>
                 <div className="examples">
@@ -199,7 +187,9 @@ const OrganizationsPage = () => {
                 </div>
               </div>
               <div className="target-card">
-                <div className="target-icon">📖</div>
+                <div className="target-icon material-icons">
+                  menu_book
+                </div>
                 <h4>{t('organizations.target.ministries.title')}</h4>
                 <p>{t('organizations.target.ministries.desc')}</p>
                 <div className="examples">
@@ -212,7 +202,9 @@ const OrganizationsPage = () => {
                 </div>
               </div>
               <div className="target-card">
-                <div className="target-icon">🌍</div>
+                <div className="target-icon material-icons">
+                  public
+                </div>
                 <h4>{t('organizations.target.missions.title')}</h4>
                 <p>{t('organizations.target.missions.desc')}</p>
                 <div className="examples">
@@ -251,8 +243,8 @@ const OrganizationsPage = () => {
                     fontSize: '14px',
                     fontFamily: 'JetBrains Mono, monospace'
                   }}>
-                    <span style={{ marginRight: '8px' }}>
-                      {submitStatus.type === 'success' ? '✅' : '❌'}
+                    <span className="material-icons" style={{ marginRight: '8px', fontSize: '16px', verticalAlign: 'middle' }}>
+                      {submitStatus.type === 'success' ? 'check_circle' : 'error'}
                     </span>
                     {submitStatus.message}
                   </div>
@@ -377,7 +369,7 @@ const OrganizationsPage = () => {
                   
                   <button type="submit" className="terminal-button primary" disabled={isSubmitting}>
                     {isSubmitting ? (
-                      <>⏳ Enviando...</>
+                      <><span className="material-icons" style={{ fontSize: '16px', verticalAlign: 'middle', marginRight: '4px' }}>hourglass_empty</span> Enviando...</>
                     ) : (
                       t('contact.organization.form.button')
                     )}

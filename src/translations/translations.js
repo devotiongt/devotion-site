@@ -26,7 +26,7 @@ export const translations = {
       mission: 'Somos una organización cristiana comprometida con el uso de la tecnología como herramienta para el Reino de Dios. Creemos que cada línea de código puede ser un acto de adoración y servicio.',
       description: 'Nuestro equipo combina pasión por Cristo con excelencia técnica, desarrollando soluciones que transforman vidas y fortalecen el impacto de organizaciones que trabajan por un mundo mejor.',
       stats: {
-        love: 'Amor de Cristo',
+        love: 'Amor por Cristo',
         dedication: 'Dedicación',
       },
       values: {
@@ -384,8 +384,8 @@ export const translations = {
       },
       connect: 'Conecta',
       terminal: {
-        command: 'echo "Construido con ❤️ y fe en Cristo"',
-        output: 'Construido con ❤️ y fe en Cristo'
+        command: 'echo "Construido con amor y fe en Cristo"',
+        output: 'Construido con amor y fe en Cristo'
       },
       copyright: 'Todos los derechos reservados.',
       tech: 'React + Vite + Espíritu Santo'
@@ -777,8 +777,8 @@ export const translations = {
       },
       connect: 'Connect',
       terminal: {
-        command: 'echo "Built with ❤️ and faith in Christ"',
-        output: 'Built with ❤️ and faith in Christ'
+        command: 'echo "Built with love and faith in Christ"',
+        output: 'Built with love and faith in Christ'
       },
       copyright: 'All rights reserved.',
       tech: 'React + Vite + Holy Spirit'

@@ -66,11 +66,8 @@ const Hack2025Page = () => {
           <div className="hack-tagline-large">{t('hack2025.tagline')}</div>
           <div className="hero-actions">
             <button className="reg-btn participant" onClick={handleShowPreRegister}>
-              <span className="reg-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M4 20c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" strokeWidth="2"/>
-                </svg>
+              <span className="reg-icon material-icons">
+                person
               </span>
               <div className="reg-content">
                 <h4>Pre-regístrate</h4>
@@ -79,12 +76,8 @@ const Hack2025Page = () => {
             </button>
             
             <button className="reg-btn volunteer" onClick={handleShowVolunteer}>
-              <span className="reg-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L13.09 6.26L18 7L13.09 7.74L12 12L10.91 7.74L6 7L10.91 6.26L12 2Z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M5 17L6.5 20.5L10 21L6.5 21.5L5 25L3.5 21.5L0 21L3.5 20.5L5 17Z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M19 17L20.5 20.5L24 21L20.5 21.5L19 25L17.5 21.5L14 21L17.5 20.5L19 17Z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
+              <span className="reg-icon material-icons">
+                volunteer_activism
               </span>
               <div className="reg-content">
                 <h4>Ser Voluntario</h4>
@@ -137,32 +130,44 @@ const Hack2025Page = () => {
             <h2>{t('hack2025.participants.title')}</h2>
             <div className="participants-modern-grid">
               <div className="participant-modern">
-                <span className="participant-icon-large">👨‍💻</span>
+                <span className="participant-icon-large material-icons">
+                  code
+                </span>
                 <h4>{t('hack2025.participants.developers')}</h4>
                 <p>Frontend, backend, full-stack, mobile developers que quieren usar sus habilidades para misiones.</p>
               </div>
               <div className="participant-modern">
-                <span className="participant-icon-large">🎨</span>
+                <span className="participant-icon-large material-icons">
+                  palette
+                </span>
                 <h4>{t('hack2025.participants.designers')}</h4>
                 <p>Diseñadores UI/UX, gráficos y de experiencia que crean interfaces atractivas y funcionales.</p>
               </div>
               <div className="participant-modern">
-                <span className="participant-icon-large">🚀</span>
+                <span className="participant-icon-large material-icons">
+                  lightbulb
+                </span>
                 <h4>{t('hack2025.participants.entrepreneurs')}</h4>
                 <p>Emprendedores sociales con visión para crear soluciones sostenibles y escalables.</p>
               </div>
               <div className="participant-modern">
-                <span className="participant-icon-large">🌐</span>
+                <span className="participant-icon-large material-icons">
+                  church
+                </span>
                 <h4>{t('hack2025.participants.missionaries')}</h4>
                 <p>Trabajadores misioneros que conocen las necesidades del campo y pueden guiar el desarrollo.</p>
               </div>
               <div className="participant-modern">
-                <span className="participant-icon-large">✨</span>
+                <span className="participant-icon-large material-icons">
+                  brush
+                </span>
                 <h4>{t('hack2025.participants.creatives')}</h4>
                 <p>Profesionales creativos en marketing, contenido, video, fotografía y comunicaciones.</p>
               </div>
               <div className="participant-modern">
-                <span className="participant-icon-large">❤️</span>
+                <span className="participant-icon-large material-icons">
+                  favorite
+                </span>
                 <h4>{t('hack2025.participants.anyone')}</h4>
                 <p>Cualquier persona apasionada por las misiones y que quiera contribuir al Reino de Dios.</p>
               </div>
@@ -173,22 +178,30 @@ const Hack2025Page = () => {
             <h2>{t('hack2025.guatemala.title')}</h2>
             <div className="guatemala-info-modern">
               <div>
-                <span className="info-icon">📅</span>
+                <span className="info-icon material-icons">
+                  event
+                </span>
                 <strong>Fecha</strong>
                 <p>{t('hack2025.guatemala.date')}</p>
               </div>
               <div>
-                <span className="info-icon">📍</span>
+                <span className="info-icon material-icons">
+                  location_on
+                </span>
                 <strong>Ubicación</strong>
                 <p>{t('hack2025.guatemala.location')}</p>
               </div>
               <div>
-                <span className="info-icon">🏆</span>
+                <span className="info-icon material-icons">
+                  emoji_events
+                </span>
                 <strong>Premio</strong>
                 <p>Reconocimientos y oportunidades de implementación</p>
               </div>
               <div>
-                <span className="info-icon">🎯</span>
+                <span className="info-icon material-icons">
+                  groups
+                </span>
                 <strong>Equipos</strong>
                 <p>3-5 personas por equipo multidisciplinario</p>
               </div>
