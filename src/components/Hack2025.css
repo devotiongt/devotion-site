@@ -242,9 +242,16 @@
 }
 
 .cta-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6rem;
+  flex-wrap: wrap;
+}
+
+.cta-item {
+  flex: 0 1 400px;
+  max-width: 400px;
 }
 
 .terminal-window.cta .window-content {
@@ -333,7 +340,7 @@
   }
   
   .cta-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
   }
   
