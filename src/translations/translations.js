@@ -23,7 +23,7 @@ export const translations = {
     },
     about: {
       title: 'Nuestra Misión',
-      mission: 'Somos una organización cristiana comprometida con el uso de la tecnología como herramienta para el Reino de Dios. Creemos que cada línea de código puede ser un acto de adoración y servicio.',
+      mission: 'Somos una comunidad cristiana comprometida con el uso de la tecnología como herramienta para el Reino de Dios. Creemos que cada línea de código puede ser un acto de adoración y servicio.',
       description: 'Nuestro equipo combina pasión por Cristo con excelencia técnica, desarrollando soluciones que transforman vidas y fortalecen el impacto de organizaciones que trabajan por un mundo mejor.',
       stats: {
         love: 'Amor por Cristo',
@@ -415,7 +415,7 @@ export const translations = {
     },
     about: {
       title: 'Our Mission',
-      mission: 'We are a Christian organization committed to using technology as a tool for God\'s Kingdom. We believe that every line of code can be an act of worship and service.',
+      mission: 'We are a Christian community committed to using technology as a tool for God\'s Kingdom. We believe that every line of code can be an act of worship and service.',
       description: 'Our team combines passion for Christ with technical excellence, developing solutions that transform lives and strengthen the impact of organizations working for a better world.',
       stats: {
         love: 'Love of Christ',
