@@ -70,7 +70,7 @@ const Hack2025Page = () => {
                 person
               </span>
               <div className="reg-content">
-                <h4>Pre-regístrate</h4>
+                <h4>Regístrate</h4>
                 <p>¡Reserva tu lugar!</p>
               </div>
             </button>

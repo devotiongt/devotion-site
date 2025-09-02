@@ -274,7 +274,7 @@ export const translations = {
     hack2025: {
       title: '#HACK2025 Guatemala',
       subtitle: 'El hackathón global más grande para misiones digitales',
-      date: 'Octubre 2025 - Confirmando fecha y lugar',
+      date: '10, 11 y 23 de Octubre 2025 - Iglesia La Biblia Abierta, Ciudad San Cristobal, Mixco, Guatemala',
       tagline: 'Seguidores de Jesús construyendo soluciones para impulsar la misión de Dios',
       what: {
         title: '¿Qué es #HACK2025?',
@@ -296,16 +296,16 @@ export const translations = {
       },
       guatemala: {
         title: 'Guatemala 2025',
-        location: 'Guatemala - Pendiente de confirmar',
-        date: 'Octubre',
+        location: 'Iglesia La Biblia Abierta, Ciudad San Cristobal, Mixco',
+        date: '10, 11 y 12 de Octubre',
         description: 'Únete al primer #HACK en Guatemala. Estamos organizando este evento histórico para conectar a la comunidad cristiana tecnológica del país.',
         updates: 'Mantente informado sobre actualizaciones de fecha y ubicación'
       },
       cta: {
         preregister: {
-          title: 'Pre-regístrate',
-          subtitle: 'Regístrate para recibir actualizaciones sobre fecha, lugar y detalles del evento',
-          button: 'Pre-registrarse Ahora'
+          title: 'Regístrate',
+          subtitle: 'Regístrate para recibir actualizaciones sobre los detalles del evento',
+          button: 'Registrarse Ahora'
         },
         volunteer: {
           title: 'Ser Voluntario',
@@ -315,7 +315,7 @@ export const translations = {
       },
       form: {
         preregister: {
-          title: 'Pre-registro #HACK2025 Guatemala',
+          title: 'Registro #HACK2025 Guatemala',
           name: 'Nombre completo',
           email: 'Correo electrónico',
           phone: 'Teléfono (opcional)',
@@ -323,7 +323,7 @@ export const translations = {
           experience: 'Experiencia técnica',
           motivation: '¿Por qué quieres participar en #HACK2025?',
           updates: 'Quiero recibir actualizaciones por email',
-          button: 'Confirmar Pre-registro'
+          button: 'Confirmar Registro'
         },
         volunteer: {
           title: 'Voluntario #HACK2025 Guatemala',
@@ -667,7 +667,7 @@ export const translations = {
     hack2025: {
       title: '#HACK2025 Guatemala',
       subtitle: 'The world\'s largest hackathon for digital missions',
-      date: 'October 2025 - Confirming date and venue',
+      date: 'October 10, 11 & 12 - Iglesia La Biblia Abierta, Ciudad San Cristobal, Mixco, Guatemala',
       tagline: 'Followers of Jesus building solutions to further God\'s mission',
       what: {
         title: 'What is #HACK2025?',
@@ -689,16 +689,16 @@ export const translations = {
       },
       guatemala: {
         title: 'Guatemala 2025',
-        location: 'Ciudad San Cristóbal, Guatemala',
-        date: 'October 24, 25 and 26',
+        location: 'Iglesia La Biblia Abierta, Ciudad San Cristóbal, Mixco, Guatemala',
+        date: 'October 10, 11 & 12',
         description: 'Join the first #HACK in Guatemala. We\'re organizing this historic event to connect the country\'s Christian tech community.',
         updates: 'Stay informed about date and location updates'
       },
       cta: {
         preregister: {
-          title: 'Pre-register',
+          title: 'Register',
           subtitle: 'Register to receive updates about date, venue and event details',
-          button: 'Pre-register Now'
+          button: 'Register Now'
         },
         volunteer: {
           title: 'Be a Volunteer',
@@ -708,7 +708,7 @@ export const translations = {
       },
       form: {
         preregister: {
-          title: 'Pre-registration #HACK2025 Guatemala',
+          title: 'Registration #HACK2025 Guatemala',
           name: 'Full name',
           email: 'Email address',
           phone: 'Phone (optional)',
@@ -716,7 +716,7 @@ export const translations = {
           experience: 'Technical experience',
           motivation: 'Why do you want to participate in #HACK2025?',
           updates: 'I want to receive email updates',
-          button: 'Confirm Pre-registration'
+          button: 'Confirm Registration'
         },
         volunteer: {
           title: 'Volunteer #HACK2025 Guatemala',

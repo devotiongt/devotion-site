@@ -77,7 +77,7 @@ const UpcomingEvents = () => {
                     </Link>
                     <Link to="/hack2025" className="event-btn secondary">
                       <span className="btn-icon">📝</span>
-                      Pre-registro
+                      Registro
                     </Link>
                   </div>
                 </div>

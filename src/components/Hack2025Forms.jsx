@@ -55,7 +55,7 @@ const Hack2025Forms = ({ formType = 'preregister', onBack }) => {
     if (result.success) {
       setSubmitStatus({
         type: 'success',
-        message: '¡Pre-registro enviado exitosamente! Pronto recibirás actualizaciones sobre el evento.'
+        message: '¡Registro enviado exitosamente! Pronto recibirás actualizaciones sobre el evento.'
       });
       setIsFormSubmitted(true);
       
@@ -71,7 +71,7 @@ const Hack2025Forms = ({ formType = 'preregister', onBack }) => {
     } else {
       setSubmitStatus({
         type: 'error',
-        message: 'Hubo un error al enviar tu pre-registro. Por favor, inténtalo de nuevo.'
+        message: 'Hubo un error al enviar tu registro. Por favor, inténtalo de nuevo.'
       });
     }
     
